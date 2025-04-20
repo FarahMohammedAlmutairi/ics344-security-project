@@ -11,13 +11,10 @@
 ## 📄 Project Phases
 
 ### 🔹 Phase 1: Setup and Compromise
-Set up a vulnerable service on Metasploitable3 and exploit it using Metasploit and a custom attack script. Deliverables include screenshots and proof of successful exploitation.
-
+This phase involves setting up a vulnerable environment using Metasploitable3 and configuring an attacker machine with Kali Linux. The goal is to select a vulnerable service and exploit it using both Metasploit and a custom attack script to demonstrate how the service can be compromised.
 ### 🔹 Phase 2: SIEM Dashboard Analysis
-Integrate logs from both attacker and victim machines into a SIEM tool (Splunk), visualize the attack, and analyze patterns. Screenshots and insights are included.
-
+In this phase, logs from the victim and attacker machines are integrated into a Security Information and Event Management (SIEM) tool. The objective is to visualize, monitor, and analyze the attack to understand how it occurred and identify any patterns or suspicious activity.
 ### 🔹 Phase 3: Defensive Strategy Proposal
-Apply a security defense (e.g., patching, config changes, or tools like Fail2Ban), rerun the attack to test its effectiveness, and show a before-and-after security comparison.
-
+The final phase focuses on proposing and implementing a defense mechanism to secure the previously compromised service. The defense is then tested by repeating the original attack to confirm that the vulnerability has been mitigated.
 ## 📁 Repository Structure
 
