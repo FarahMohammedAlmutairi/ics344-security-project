@@ -2,11 +2,11 @@
 
 ## 👥 Team Members
 
-| Name              | Student ID     | Role                                |
-|-------------------|----------------|-------------------------------------|
-| Farah Almutairi   | 20XXXXXXXX      | Metasploit setup & documentation    |
-| [Member 2 Name]   | [ID]            | SIEM integration & analysis         |
-| [Member 3 Name]   | [ID]            | Defensive strategy & testing        |
+| Name              | Student ID     | 
+|-------------------|----------------|
+| Farah Almutairi   | 202159190      |    
+| Reema Alhweamel   | 202178930      |       
+| Danah Aljameel   | 202153110       |       
 
 ## 📄 Project Phases
 
