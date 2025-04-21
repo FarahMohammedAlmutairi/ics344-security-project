@@ -105,6 +105,7 @@ run
 ![image](https://github.com/user-attachments/assets/e0d0068a-904d-4d5c-9a71-c4d7fc61ce60)
 
 This means Metasploit successfully logged into the target machine via SSH and opened a remote shell session.
+
 ---
 ## ✅ Conclusion
 
