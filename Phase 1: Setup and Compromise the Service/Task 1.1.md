@@ -105,3 +105,8 @@ run
 ![image](https://github.com/user-attachments/assets/e0d0068a-904d-4d5c-9a71-c4d7fc61ce60)
 
 This means Metasploit successfully logged into the target machine via SSH and opened a remote shell session.
+---
+## ✅ Conclusion
+
+In this task, we used Metasploit in Kali Linux to perform a brute-force attack on the SSH service of Metasploitable3. We created custom wordlists, configured the scanner module, and ran the attack. At the end, Metasploit found the correct login credentials and opened a shell session on the target machine. This proves that we successfully compromised the service.
+
