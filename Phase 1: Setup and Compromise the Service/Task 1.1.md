@@ -57,3 +57,11 @@ nano /home/kali/ssh-brute/users.txt
 
 ```bash
 nano /home/kali/ssh-brute/pass.txt
+```
+#### content of the users file:
+
+
+#### content of the passwords file:
+
+
+
