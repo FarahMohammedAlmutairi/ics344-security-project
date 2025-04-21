@@ -1,4 +1,4 @@
-# 🛠️ Task 1.2 – Compromise the service using a custom script that you create
+# Task 1.2 – Compromise the service using a custom script that you create
 
 ## 🎯 Objective
 
