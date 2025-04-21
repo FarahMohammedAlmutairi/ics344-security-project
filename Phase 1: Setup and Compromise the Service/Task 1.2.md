@@ -6,6 +6,15 @@ Use a custom Bash script with Hydra to perform a brute-force attack on the SSH s
 
 ---
 
+# 🔧 Steps Performed
+
+## ✅ Step 1: Create the Script File Using nano
+
+Open a terminal in Kali and create a new Bash script file:
+
+```bash
+nano script.sh
+```
 ## 📄 Script Used
 
 We created a Bash script (`script.sh`) that automates the process of using Hydra to brute-force SSH login credentials.
@@ -47,12 +56,3 @@ else
 
 
 
-# 🔧 Steps Performed
-
-## ✅ Step 1: Create the Script File Using nano
-
-Open a terminal in Kali and create a new Bash script file:
-
-```bash
-nano script.sh
-```
