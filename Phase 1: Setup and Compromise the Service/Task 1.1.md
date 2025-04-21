@@ -30,10 +30,15 @@ Open a terminal in Kali Linux and type:
 
 ```bash
 msfconsole
+
 ### ✅ Step 2: Select the SSH Login Scanner Module
+
+Open Metasploit and type the following to use the SSH login scanner:
 
 ```bash
 use auxiliary/scanner/ssh/ssh_login
+
+
 ### ✅ Step 3: Create Custom Wordlists
 ``` bash
 echo -e "root\nmsfadmin\nuser\nadmin" > /home/kali/ssh-brute/users.txt
