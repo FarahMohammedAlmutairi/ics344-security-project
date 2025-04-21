@@ -31,6 +31,8 @@ Open a terminal in Kali Linux and type:
 ```bash
 msfconsole
 ```
+![image](https://github.com/user-attachments/assets/89f65339-e9ae-4a6b-a180-ca4823099e36)
+
 ### ✅ Step 2: Select the SSH Login Scanner Module
 
 Open Metasploit and type the following to use the SSH login scanner:
