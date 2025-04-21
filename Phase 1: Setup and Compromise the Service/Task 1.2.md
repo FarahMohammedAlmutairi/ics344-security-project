@@ -6,6 +6,23 @@ Use a custom Bash script with Hydra to perform a brute-force attack on the SSH s
 
 ---
 
+## 🖥️ Environment Setup
+
+| Machine            | IP Address      | Role         |
+|--------------------|------------------|--------------|
+| Kali Linux         | 192.168.64.2       | Attacker     |
+| Metasploitable3    | 192.168.64.3       | Victim       |
+
+---
+
+## 🛠 Tools Used
+
+- **Kali Linux** – Attack platform
+- **Metasploit Framework** – Exploitation tool
+- **Metasploitable3** – Vulnerable target machine
+
+---
+
 # 🔧 Steps Performed
 
 ## ✅ Step 1: Create the Script File Using nano
