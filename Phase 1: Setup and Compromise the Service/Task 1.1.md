@@ -85,4 +85,12 @@ set THREADS 4
 set VERBOSE true
 ```
 ![image](https://github.com/user-attachments/assets/e37da72a-ba23-410a-b272-a7eb443162df)
+🔍 **Explanation of each setting:**
+
+- `RHOSTS`: The IP address of the target machine (Metasploitable3)
+- `USER_FILE`: Path to the file that contains the list of usernames
+- `PASS_FILE`: Path to the file that contains the list of passwords
+- `BRUTEFORCE_SPEED`: Controls how fast the attack runs (1 = slow, 5 = fast)
+- `THREADS`: Number of parallel login attempts to speed up the scan
+- `VERBOSE`: Shows the result of every login attempt in the terminal
 
