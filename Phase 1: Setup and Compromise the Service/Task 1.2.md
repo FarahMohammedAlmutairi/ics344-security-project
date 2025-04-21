@@ -42,5 +42,5 @@ if [ -s "$OUTPUT_FILE" ]; then
     cat "$OUTPUT_FILE"
 else
     echo "No valid credentials found."
-fi
+``
 
