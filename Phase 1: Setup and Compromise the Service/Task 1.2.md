@@ -2,8 +2,7 @@
 
 ## 🎯 Objective
 
-Use a custom Bash script with Hydra to perform a brute-force attack on the SSH service of Metasploitable3. 
-
+Use a custom Bash script with Hydra to perform a brute-force attack on the SSH service of Metasploitable3.
 ---
 
 ## 🖥️ Environment Setup
@@ -17,9 +16,9 @@ Use a custom Bash script with Hydra to perform a brute-force attack on the SSH s
 
 ## 🛠 Tools Used
 
-- **Kali Linux** – Attack platform
-- **Metasploit Framework** – Exploitation tool
-- **Metasploitable3** – Vulnerable target machine
+- **Kali Linux** – Attack platform  
+- **Hydra** – Brute-force tool  
+- **Metasploitable3** – Vulnerable target machine  
 
 ---
 
@@ -82,5 +81,9 @@ After writing and saving the script using `nano`, we executed it using the follo
 bash script.sh
 ```
 ![image](https://github.com/user-attachments/assets/f0ef2d51-b9c8-4000-8c67-e19fa192ddfb)
+---
+## ✅ Conclusion
+
+In this task, we created and ran a custom script that used Hydra to attack the SSH service. The script tested many username and password combinations, and at the end, it successfully found the correct login. This proves that the script worked and completed the task goal.
 
 
