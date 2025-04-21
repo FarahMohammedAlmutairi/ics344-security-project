@@ -52,4 +52,8 @@ After creating the wordlists, open them with `nano` to make sure they contain th
 
 ```bash
 nano /home/kali/ssh-brute/users.txt
+```
+#### 📝 Edit the passwords file:
 
+```bash
+nano /home/kali/ssh-brute/pass.txt
