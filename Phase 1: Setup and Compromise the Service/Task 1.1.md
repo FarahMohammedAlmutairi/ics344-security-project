@@ -84,7 +84,7 @@ set BRUTEFORCE_SPEED 5
 set THREADS 4
 set VERBOSE true
 ```
-![image](https://github.com/user-attachments/assets/e37da72a-ba23-410a-b272-a7eb443162df)
+![image](https://github.com/user-attachments/assets/9a183e0a-1b3b-4562-bd07-bb99177989d2)
 🔍 **Explanation of each setting:**
 
 - `RHOSTS`: The IP address of the target machine (Metasploitable3)
@@ -93,4 +93,11 @@ set VERBOSE true
 - `BRUTEFORCE_SPEED`: Controls how fast the attack runs (1 = slow, 5 = fast)
 - `THREADS`: Number of parallel login attempts to speed up the scan
 - `VERBOSE`: Shows the result of every login attempt in the terminal
+### ✅ Step 6: Run the Brute Force Attack
+
+Once everything is configured correctly, run the module to start the brute-force attack:
+
+```bash
+run
+```
 
