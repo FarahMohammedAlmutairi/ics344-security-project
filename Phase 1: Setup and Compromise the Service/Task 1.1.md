@@ -58,6 +58,8 @@ nano /home/kali/ssh-brute/users.txt
 ```bash
 nano /home/kali/ssh-brute/pass.txt
 ```
+![image](https://github.com/user-attachments/assets/788a74c3-bd32-4962-96d5-deeebf3f7127)
+
 #### content of the users file:
 ![image](https://github.com/user-attachments/assets/8fedfad2-2381-44a7-8135-0c8f93f2ddb8)
 
