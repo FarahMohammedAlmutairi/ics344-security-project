@@ -42,5 +42,17 @@ if [ -s "$OUTPUT_FILE" ]; then
     cat "$OUTPUT_FILE"
 else
     echo "No valid credentials found."
-``
+```
+![image](https://github.com/user-attachments/assets/201c0d13-45d2-4612-a4bb-b8a5984c7628)
 
+
+
+# 🔧 Steps Performed
+
+## ✅ Step 1: Create the Script File Using nano
+
+Open a terminal in Kali and create a new Bash script file:
+
+```bash
+nano script.sh
+```
