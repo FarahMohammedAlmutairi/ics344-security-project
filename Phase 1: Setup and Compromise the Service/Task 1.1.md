@@ -101,6 +101,7 @@ Once everything is configured correctly, run the module to start the brute-force
 run
 ```
 ![image](https://github.com/user-attachments/assets/003794b2-af3f-4075-8cb1-84e42fb57dda)
-![Uploading image.png…]()
+
+![image](https://github.com/user-attachments/assets/e0d0068a-904d-4d5c-9a71-c4d7fc61ce60)
 
 This means Metasploit successfully logged into the target machine via SSH and opened a remote shell session.
