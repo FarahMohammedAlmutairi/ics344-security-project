@@ -2,7 +2,7 @@
 
 ## 🎯 Objective
 
-Use a custom Bash script with Hydra to perform a brute-force attack on the SSH service of Metasploitable3. Demonstrate valid credentials and provide proof of concept.
+Use a custom Bash script with Hydra to perform a brute-force attack on the SSH service of Metasploitable3. 
 
 ---
 
