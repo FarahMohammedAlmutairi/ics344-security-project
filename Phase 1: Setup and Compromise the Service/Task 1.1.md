@@ -10,8 +10,8 @@ Compromise the SSH service of Metasploitable3 from Kali Linux using Metasploit a
 
 | Machine            | IP Address      | Role         |
 |--------------------|------------------|--------------|
-| Kali Linux         | 192.20.10.2       | Attacker     |
-| Metasploitable3    | 192.20.10.3       | Victim       |
+| Kali Linux         | 192.168.64.2       | Attacker     |
+| Metasploitable3    | 192.168.64.3       | Victim       |
 
 ---
 
