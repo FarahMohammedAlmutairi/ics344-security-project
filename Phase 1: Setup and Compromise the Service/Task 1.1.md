@@ -44,7 +44,7 @@ use auxiliary/scanner/ssh/ssh_login
 echo -e "root\nmsfadmin\nuser\nadmin" > /home/kali/ssh-brute/users.txt
 echo -e "root\nmsfadmin\ntoor\n123456" > /home/kali/ssh-brute/pass.txt
 ```
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/d6bfa9ac-cb05-4813-baf5-842f220a482b)
 
 ### ✅ Step 4: Edit the Wordlists Using Nano
 
