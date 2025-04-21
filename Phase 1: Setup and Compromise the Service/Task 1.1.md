@@ -40,6 +40,7 @@ Open Metasploit and type the following to use the SSH login scanner:
 ```bash
 use auxiliary/scanner/ssh/ssh_login
 ```
+![image](https://github.com/user-attachments/assets/1eb9ce2e-b5bb-4164-afc7-91143314862a)
 
 ### ✅ Step 3: Create Custom Wordlists
 ``` bash
