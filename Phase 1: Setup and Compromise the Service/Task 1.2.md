@@ -32,6 +32,8 @@ Open a terminal in Kali and create a new Bash script file:
 ```bash
 nano script.sh
 ```
+![image](https://github.com/user-attachments/assets/457ebecb-f8ea-4e37-bcc5-ff067feacd5d)
+
 ## 📄 Script Used
 
 We created a Bash script (`script.sh`) that automates the process of using Hydra to brute-force SSH login credentials.
@@ -71,5 +73,14 @@ else
 ```
 ![image](https://github.com/user-attachments/assets/201c0d13-45d2-4612-a4bb-b8a5984c7628)
 
+---
+### ✅ Step 2: Run the Script Using `bash`
+
+After writing and saving the script using `nano`, we executed it using the following command:
+
+```bash
+bash script.sh
+```
+![image](https://github.com/user-attachments/assets/f0ef2d51-b9c8-4000-8c67-e19fa192ddfb)
 
 
