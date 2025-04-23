@@ -63,14 +63,14 @@ nano /home/kali/ssh-brute/users.txt
 ```bash
 nano /home/kali/ssh-brute/pass.txt
 ```
-![image](https://github.com/user-attachments/assets/788a74c3-bd32-4962-96d5-deeebf3f7127)
+![files content](screenshotss/phase111.png)
 
 #### content of the users file:
-![image](https://github.com/user-attachments/assets/8fedfad2-2381-44a7-8135-0c8f93f2ddb8)
+![files content](screenshotss/phase1111.png)
 
 
 #### content of the passwords file:
-![image](https://github.com/user-attachments/assets/ce6f742d-8ca9-4f4c-9dda-ab4404fe97c8)
+![files content](screenshotss/phase121.png)
 
 ### ✅ Step 5: Configure the Metasploit Module
 
@@ -84,7 +84,7 @@ set BRUTEFORCE_SPEED 5
 set THREADS 4
 set VERBOSE true
 ```
-![image](https://github.com/user-attachments/assets/9a183e0a-1b3b-4562-bd07-bb99177989d2)
+![files content](screenshotss/phasee1.png)
 🔍 **Explanation of each setting:**
 
 - `RHOSTS`: The IP address of the target machine (Metasploitable3)
@@ -102,7 +102,7 @@ run
 ```
 ![image](https://github.com/user-attachments/assets/003794b2-af3f-4075-8cb1-84e42fb57dda)
 
-![image](https://github.com/user-attachments/assets/e0d0068a-904d-4d5c-9a71-c4d7fc61ce60)
+![files content](screenshotss/pic1.png)
 
 This means Metasploit successfully logged into the target machine via SSH and opened a remote shell session.
 
