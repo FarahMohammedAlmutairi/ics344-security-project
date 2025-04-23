@@ -1,105 +1,96 @@
 
-# Phase 2: Visual Analysis with a SIEM Dashboard (Splunk)
+# Phase 2: Visual Analysis with Splunk SIEM (Server & Forwarder)
 
-## 🎯 Objective
-Use **Splunk** to collect and visualize logs from the **victim (Metasploitable3)** and optionally a **honeypot**. The objective is to detect, analyze, and compare attack patterns based on log data.
-
----
-
-## 🧰 Tools Used
-
-| Tool               | Purpose                                               |
-|--------------------|-------------------------------------------------------|
-| Splunk             | SIEM tool for log collection and visualization        |
-| Metasploitable3    | Vulnerable machine acting as the victim               |
-| Kali Linux         | Attacker machine (can also run Splunk)                |
-| SCP / Shared Folders | Transfer logs from Metasploitable3 to Kali           |
+##  Objective
+Use **Splunk** as a SIEM platform to collect, forward, and visualize security logs from a victim machine (Metasploitable3) or honeypot system.
 
 ---
 
-## 🛠️ Setup Instructions
+##  Environment Setup
 
-### 1. Install Splunk
-- Download Splunk from: [https://www.splunk.com](https://www.splunk.com)
-- Install using `.deb` or `.rpm` on your machine.
-- Access it from your browser: `http://localhost:8000`
-- Default credentials:
-  ```plaintext
-  Username: admin
-  Password: changeme
-  ```
+| Machine         | Role            | IP Address       |
+|----------------|------------------|------------------|
+| Kali Linux     | SIEM + Attacker  | 192.168.64.2     |
+| Metasploitable3| Victim           | 192.168.64.3     |
 
 ---
 
-### 2. Transfer Logs from Victim Machine
+## Part 1: Splunk SIEM Setup (Server & Web Interface)
 
+### Step 1: Install Splunk Server (SIEM)
 ```bash
-# On Metasploitable3
-sudo cp /var/log/auth.log /home/vagrant/
-sudo chown vagrant:vagrant /home/vagrant/auth.log
-
-# From Kali Linux or host machine
-scp vagrant@<victim-ip>:/home/vagrant/auth.log ~/Desktop/
+wget -O splunk-9.3.2.deb https://download.splunk.com/products/splunk/releases/9.3.2/linux/splunk-9.3.2-d8bb32809498-linux-2.6-amd64.deb
+sudo dpkg -i splunk-9.3.2.deb
+sudo apt --fix-broken install
+sudo /opt/splunk/bin/splunk start --accept-license
+sudo /opt/splunk/bin/splunk enable boot-start
 ```
 
-📷 *Log Transfer*  
-![Log Copy Commands](screenshots/log-copy-commands.png)
+### Step 2: Access Splunk Interface
+Navigate to `http://<your-ip>:8000`  
+Login with:
+- Username: `admin`
+- Password: *(Set during first boot)*
+
+![Splunk Admin Interface](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/splunk-admin-dashboard.png)
 
 ---
 
-### 3. Upload Logs to Splunk
+##  Part 2: Splunk Forwarder Installation (Run on Victim)
 
-#### Step-by-Step:
-1. Go to **Settings → Add Data**
-2. Select **Upload**
-3. Choose `auth.log`  
-📷  
-![Select File](screenshots/select-source.png)
+### Step 3: Install Splunk Universal Forwarder
+```bash
+wget -O splunkforwarder-9.4.1.deb https://download.splunk.com/products/universalforwarder/releases/9.4.1/linux/splunkforwarder-9.4.1-e3bdab203ac8-linux-arm64.deb
+sudo dpkg -i splunkforwarder-9.4.1.deb
+sudo apt --fix-broken install
+sudo /opt/splunkforwarder/bin/splunk start --accept-license
+```
 
-4. Set Source Type  
-📷  
-![Set Source Type](screenshots/set-source-type-view.png)
-
-5. Save Source Type (optional)  
-📷  
-![Save Source Type](screenshots/save-source-type.png)
-
-6. Input Host & Index (e.g., Default or Custom)  
-📷  
-![Input Settings](screenshots/input-settings.png)
-
-7. Review before submit  
-📷  
-![Upload Review](screenshots/upload-review.png)
-
-8. Upload successful confirmation  
-📷  
-![Upload Successful](screenshots/upload-successful.png)
+### Step 4: Configure the Forwarder
+```bash
+sudo /opt/splunkforwarder/bin/splunk add forward-server <splunk-server-ip>:9997
+sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log
+sudo /opt/splunkforwarder/bin/splunk enable boot-start
+```
 
 ---
 
-## 📊 Visualization in Splunk
+##  Part 3: Log Upload and Visualization in Splunk
 
-### Example Search Queries
-
-#### 1. Failed Logins
-```spl
-index=main sourcetype="auth_log" "Failed password"
+### Step 1: Uploading `auth.log` (Manual if no forwarder)
+```bash
+scp user@victim:/var/log/auth.log ~/Desktop/
 ```
 
-#### 2. Failed Logins Over Time
+#### Splunk Upload Walkthrough:
+- **Upload File**: `auth.log`
+- **Set Source Type**: `auth_log`
+- **Define Host & Index**
+- **Confirm Upload**
+
+ Screenshots:
+
+- ![File Upload](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/select-source.png)
+- ![Review Step](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/upload-review.png)
+- ![Success Message](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/upload-successful.png)
+
+---
+
+##  Part 4: Queries & Dashboard
+
+###  Example Queries
+
+#### 1. Failed Password Attempts Over Time
 ```spl
 index=main sourcetype="auth_log" "Failed password"
 | timechart span=1h count
 ```
 
-📷  
-**Timechart for Failed Logins**  
-![Failed Timechart](screenshots/search-failed-bar-chart-updated.png)
+![Failed Password Chart](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/search-failed-bar-chart-updated.png)
 
 ---
 
-#### 3. Accepted Logins by IP
+#### 2. Accepted Passwords by IP
 ```spl
 index=main sourcetype="auth_log" "Accepted password"
 | rex "from (?<ip>\d+\.\d+\.\d+\.\d+)"
@@ -107,76 +98,43 @@ index=main sourcetype="auth_log" "Accepted password"
 | sort -count
 ```
 
-📷  
-![Accepted Chart](screenshots/search-accepted-bar-chart.png)
+![Accepted Passwords](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/search-accepted-bar-chart.png)
 
 ---
 
-#### 4. Accepted Logins Over Time
-```spl
-index=main sourcetype="auth_log" "Accepted password"
-| timechart span=1h count
-```
-
-📷  
-**Accepted Passwords (Sparse Data)**  
-![Accepted Sparse](screenshots/accepted-timechart-empty.png)
-
-📷  
-**Accepted Passwords (Minimal Data)**  
-![Accepted Minimal](screenshots/accepted-timechart-single.png)
+### Save Panel to Dashboard
+![Save Dashboard](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/save-to-dashboard.png)
 
 ---
 
-### Dashboard Creation
+##  Troubleshooting & Common Errors
 
-After generating charts:
-- Click **Save As** → **New Dashboard Panel**
-
-📷  
-![Save to Dashboard](screenshots/save-to-dashboard.png)
-
----
-
-## ⚠️ Issues Encountered
-
-### Missing File Example
+### Log File Not Found
 ```bash
 cat /var/log/auth.log
-# Error: No such file or directory
+# No such file or directory
 ```
-
-📷  
-![Missing File](screenshots/missing-auth-log-kali.png)
+![Missing Log](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/missing-auth-log-kali.png)
 
 ---
 
-## 🖼️ Other UI Snapshots
+##  What to Monitor in Splunk
 
-📷 Splunk Admin View  
-![Admin Dashboard](screenshots/splunk-admin-dashboard.png)
-
-📷 Data Input Options  
-![Data Options](screenshots/data-source-options.png)
-
-📷 Visualization Not Showing Warning  
-![No Visualization](screenshots/search-no-visualization.png)
+| Item                 | Reason                              |
+|----------------------|-------------------------------------|
+| `auth.log`           | Login attempts, brute-force signs   |
+| `syslog`             | System-wide alerts, reboots         |
+| `messages`           | Kernel messages, error reporting    |
+| `secure`             | Authentication-related events       |
 
 ---
 
-## ✅ Summary
+##  Summary
 
-- Splunk successfully used to ingest and analyze logs.
-- Key visualizations include login attempts over time, source IP analysis, and comparison views.
-- Issues such as missing log files were encountered and documented.
-
----
-
-## 👥 Contributors
-
-- **Name**: Farah Almutairi  
-- **Course**: ICS344  
-- **Instructor**: [Insert Name Here]  
-- **Phase**: 2 – Log Analysis Using SIEM
+This phase demonstrated:
+- How to install and configure Splunk SIEM
+- Use of a forwarder to collect logs
+- Manual log upload and analysis
+- Creating dashboards to detect intrusions
 
 
