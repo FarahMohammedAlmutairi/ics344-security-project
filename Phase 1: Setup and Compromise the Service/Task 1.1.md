@@ -31,7 +31,7 @@ Open a terminal in Kali Linux and type:
 ```bash
 msfconsole
 ```
-![image](https://raw.githubusercontent.com/FarahMohammedAlmutairi/ics344-security-project/main/Phase%201:%20Setup%20and%20Compromise%20the%20Service/screenshostss/phase1.png)
+![files content](screenshotss/phase1.png)
 
 ### ✅ Step 2: Select the SSH Login Scanner Module
 
