@@ -23,7 +23,6 @@ wget -O splunk-9.3.2.deb https://download.splunk.com/products/splunk/releases/9.
 sudo dpkg -i splunk-9.3.2.deb
 sudo apt --fix-broken install
 sudo /opt/splunk/bin/splunk start --accept-license
-sudo /opt/splunk/bin/splunk enable boot-start
 ```
 
 ### Step 2: Access Splunk Interface
