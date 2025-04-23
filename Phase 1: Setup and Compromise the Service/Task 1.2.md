@@ -1,11 +1,11 @@
 # Task 1.2 – Compromise the service using a custom script that you create
 
-## 🎯 Objective
+##  Objective
 
 Use a custom Bash script with Hydra to perform a brute-force attack on the SSH service of Metasploitable3.
 ---
 
-## 🖥️ Environment Setup
+##  Environment Setup
 
 | Machine            | IP Address      | Role         |
 |--------------------|------------------|--------------|
@@ -22,9 +22,9 @@ Use a custom Bash script with Hydra to perform a brute-force attack on the SSH s
 
 ---
 
-# 🔧 Steps Performed
+#  Steps Performed
 
-## ✅ Step 1: Create the Script File Using nano
+##  Step 1: Create the Script File Using nano
 
 Open a terminal in Kali and create a new Bash script file:
 
@@ -33,11 +33,11 @@ nano script.sh
 ```
 ![image](screenshotss/ppic1.png)
 
-## 📄 Script Used
+##  Script Used
 
 We created a Bash script (`script.sh`) that automates the process of using Hydra to brute-force SSH login credentials.
 
-### 📝 `script.sh`
+###  `script.sh`
 
 ```bash
 #!/bin/bash
@@ -73,7 +73,7 @@ else
 ![image](screenshotss/pic2.png)
 
 ---
-### ✅ Step 2: Run the Script Using `bash`
+###  Step 2: Run the Script Using `bash`
 
 After writing and saving the script using `nano`, we executed it using the following command:
 
@@ -83,7 +83,7 @@ bash script.sh
 ![image](screenshotss/pic3.png)
 
 ---
-## ✅ Conclusion
+##  Conclusion
 
 In this task, we created and ran a custom script that used Hydra to attack the SSH service. The script tested many username and password combinations, and at the end, it successfully found the correct login. This proves that the script worked and completed the task goal.
 
