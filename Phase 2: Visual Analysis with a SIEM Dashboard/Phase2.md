@@ -1,5 +1,5 @@
 
-# 📊 ICS344 – Phase 2: Visual Analysis with a SIEM Dashboard (Splunk)
+# Phase 2: Visual Analysis with a SIEM Dashboard (Splunk)
 
 ## 🎯 Objective
 Use **Splunk** to collect and visualize logs from the **victim (Metasploitable3)** and optionally a **honeypot**. The objective is to detect, analyze, and compare attack patterns based on log data.
