@@ -47,5 +47,7 @@ This means if someone fails to log in 6 times within 10 minutes, they get banned
 
 ---
 ### Step 4: Restart Fail2Ban
-
+```bash
+sudo service fail2ban restart
+```
 
