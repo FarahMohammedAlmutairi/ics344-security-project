@@ -23,6 +23,7 @@ sudo apt update
 sudo apt install fail2ban -y
 ```
 ---
+![files content](screenshots3/6.jpg)
 ![files content](screenshots3/1.jpg)
 
 ## Step 2: Backup and Edit Jail Config
