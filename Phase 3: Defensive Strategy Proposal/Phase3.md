@@ -62,17 +62,17 @@ sudo service fail2ban restart
 ```
 ---
 ### Step 5: Verify That the SSH Jail is Active
-Check Fail2Ban status:
+Check that the SSH jail is working and monitoring login attempts:
 ```bash
 sudo fail2ban-client status sshd
 ```
 ---
 ### Step 6: Re-run the SSH Attack from the Attacker (Kali)
-On the Kali attacker machine, simulate SSH brute-force attempts as in Task1.1
-we 
+On the Kali attacker machine, simulate brute-force login attempts (as done in Task 1.1):
+
 
 ### Step 7: Confirm IP Ban (Proof of Defense)
-Back on the victim machine, run:
+Back on the victim machine, confirm the defense was successful by checking the jail again:
 ```bash
 sudo fail2ban-client status sshd
 ```
