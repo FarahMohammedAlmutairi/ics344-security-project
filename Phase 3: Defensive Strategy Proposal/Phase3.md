@@ -10,30 +10,42 @@ To secure the SSH service on the victim machine (Metasploitable3) by using **Fai
 Fail2Ban is a log-parsing tool that protects services like SSH from brute-force attacks by banning IPs with repeated failed login attempts.
 
 ---
+##  Step-by-Step Defense Implementation
 
-##  Step-by-Step Implementation
+---
 
-### Step 1: Install and Configure Fail2Ban on the Victim Machine
+### Step 1: Install Fail2Ban
+
+On the **victim machine** (Metasploitable3):
+
 ```bash
 sudo apt update
 sudo apt install fail2ban -y
 ```
+---
 
-### Step 2: Configure jail.local Using nano
+### Step 2: Backup and Edit Jail Config
 After installing Fail2Ban, you need to edit the jail.local file to configure protection for the SSH service.
 ```bash
+sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo nano /etc/fail2ban/jail.local
 ```
-This opens the file in the nano text editor.
-Scroll to the [sshd] Section and  
-add this block at the end of the file:
+---
+### Step 3: Configure [sshd] Section
+Add the following section
 ```bash
 [sshd]
 enabled = true
 port = ssh
 filter = sshd
 logpath = /var/log/auth.log
-maxretry = 3
+maxretry = 6
 bantime = 600
 findtime = 600
 ```
+This means if someone fails to log in 6 times within 10 minutes, they get banned for 10 minutes.
+
+---
+### Step 4: Restart Fail2Ban
+
+
