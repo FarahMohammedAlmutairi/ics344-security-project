@@ -50,10 +50,10 @@ This means if someone fails to log in 6 times within 10 minutes, they get banned
 ```bash
 sudo service fail2ban restart
 ```
-
+---
 ### Step 5: Verify That the SSH Jail is Active
 ```bash
 sudo fail2ban-client status sshd
 ```
-
+---
 ### Step 6: Re-run the SSH Attack from the Attacker (Kali)
