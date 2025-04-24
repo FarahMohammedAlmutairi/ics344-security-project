@@ -36,7 +36,7 @@ sudo nano /etc/fail2ban/jail.local
 Add the following section:
 ```bash
 [sshd]
-enabled = true
+enabled = false
 port = ssh
 filter = sshd
 logpath = /var/log/auth.log
