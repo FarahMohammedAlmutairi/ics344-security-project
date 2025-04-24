@@ -84,6 +84,7 @@ sudo fail2ban-client status sshd
 ---
 ## Step 6: Re-run the SSH Attack from the Attacker (Kali)
 On the Kali attacker machine, simulate brute-force login attempts (as done in Task 1.1):
+![files content](screenshots3/fail.jpg)
 
 
 ## Step 7: Confirm IP Ban (Proof of Defense)
