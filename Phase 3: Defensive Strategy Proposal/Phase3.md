@@ -13,8 +13,27 @@ Fail2Ban is a log-parsing tool that protects services like SSH from brute-force 
 
 ##  Step-by-Step Implementation
 
-### 1. Install Fail2Ban
+### Step 1: Install and Configure Fail2Ban on the Victim Machine
 ```bash
 sudo apt update
 sudo apt install fail2ban -y
+```
+
+### Step 2: Configure jail.local Using nano
+After installing Fail2Ban, you need to edit the jail.local file to configure protection for the SSH service.
+```bash
+sudo nano /etc/fail2ban/jail.local
+```
+This opens the file in the nano text editor.
+Scroll to the [sshd] Section and  
+add this block at the end of the file:
+```bash
+[sshd]
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 600
+findtime = 600
 ```
