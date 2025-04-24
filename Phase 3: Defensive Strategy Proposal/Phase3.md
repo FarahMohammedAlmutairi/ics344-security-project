@@ -87,3 +87,4 @@ Back on the victim machine, confirm the defense was successful by checking the j
 ```bash
 sudo fail2ban-client status sshd
 ```
+![files content](screenshots3/4.jpg)
