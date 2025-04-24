@@ -48,11 +48,17 @@ This means if someone fails to log in 6 times within 10 minutes, they get banned
 #### Breif Explanation:
 
 enabled = true: Turns on SSH monitoring.
+
 port = ssh: Monitors default SSH port (22).
+
 filter = sshd: Uses the SSH filter Fail2Ban provides.
+
 logpath = /var/log/auth.log: Auth log location for login attempts.
+
 maxretry = 3: Ban IP after 3 failed login attempts.
+
 bantime = 600: Ban duration (10 minutes).
+
 findtime = 600: Time window for counting failed attempts.
 
 ![files content](screenshots3/3.jpg)
