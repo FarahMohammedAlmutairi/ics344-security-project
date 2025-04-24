@@ -45,7 +45,7 @@ bantime = 600
 findtime = 600
 ```
 This means if someone fails to log in 6 times within 10 minutes, they get banned for 10 minutes.
-Breif Explanation:
+#### Breif Explanation:
 
 enabled = true: Turns on SSH monitoring.
 port = ssh: Monitors default SSH port (22).
@@ -54,6 +54,7 @@ logpath = /var/log/auth.log: Auth log location for login attempts.
 maxretry = 3: Ban IP after 3 failed login attempts.
 bantime = 600: Ban duration (10 minutes).
 findtime = 600: Time window for counting failed attempts.
+
 ![files content](screenshots3/3.jpg)
 
 ---
@@ -63,17 +64,17 @@ Restart the service to apply the new configuration:
 sudo service fail2ban restart
 ```
 ---
-### Step 5: Verify That the SSH Jail is Active
+## Step 5: Verify That the SSH Jail is Active
 Check that the SSH jail is working and monitoring login attempts:
 ```bash
 sudo fail2ban-client status sshd
 ```
 ---
-### Step 6: Re-run the SSH Attack from the Attacker (Kali)
+## Step 6: Re-run the SSH Attack from the Attacker (Kali)
 On the Kali attacker machine, simulate brute-force login attempts (as done in Task 1.1):
 
 
-### Step 7: Confirm IP Ban (Proof of Defense)
+## Step 7: Confirm IP Ban (Proof of Defense)
 Back on the victim machine, confirm the defense was successful by checking the jail again:
 ```bash
 sudo fail2ban-client status sshd
