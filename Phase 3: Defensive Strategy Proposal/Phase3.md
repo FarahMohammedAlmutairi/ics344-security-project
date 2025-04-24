@@ -13,7 +13,7 @@ Fail2Ban is a log-parsing tool that protects services like SSH from brute-force 
 
 ##  Step-by-Step Implementation
 
-### 1. ✅ Install Fail2Ban
+### 1. Install Fail2Ban
 ```bash
 sudo apt update
 sudo apt install fail2ban -y
