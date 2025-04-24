@@ -73,6 +73,8 @@ Restart the service to apply the new configuration:
 ```bash
 sudo service fail2ban restart
 ```
+![files content](screenshots3/restart.jpg)
+
 ---
 ## Step 5: Verify That the SSH Jail is Active
 Check that the SSH jail is working and monitoring login attempts:
