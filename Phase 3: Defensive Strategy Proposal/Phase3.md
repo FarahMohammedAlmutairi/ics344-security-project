@@ -95,3 +95,15 @@ Back on the victim machine, confirm the defense was successful by checking the j
 sudo fail2ban-client status sshd
 ```
 ![files content](screenshots3/last.jpg)
+
+---
+
+## Conclusion
+
+By implementing **Fail2Ban** on the victim machine, we successfully protected the SSH service from brute-force attacks. The attacker’s IP address was automatically detected and banned after repeated failed login attempts.
+
+This proves that **Fail2Ban** is an effective, lightweight, and easy-to-configure defensive tool for Linux systems. It improves overall security by dynamically responding to suspicious behavior, helping to prevent unauthorized access and system compromise.
+
+The re-executed attack from Phase 1 failed after enabling Fail2Ban, confirming the success of the defensive strategy.
+
+
