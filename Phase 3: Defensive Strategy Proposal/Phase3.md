@@ -32,6 +32,9 @@ Make a backup of the default config and open the jail.local file:
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 sudo nano /etc/fail2ban/jail.local
 ```
+
+![files content](screenshots3/na.jpg)
+
 ---
 ## Step 3: Configure [sshd] Section
 Add the following section:
