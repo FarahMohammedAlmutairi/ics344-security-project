@@ -36,7 +36,7 @@ sudo nano /etc/fail2ban/jail.local
 Add the following section:
 ```bash
 [sshd]
-enabled = false
+enabled = true
 port = ssh
 filter = sshd
 logpath = /var/log/auth.log
@@ -54,7 +54,7 @@ logpath = /var/log/auth.log: Auth log location for login attempts.
 maxretry = 3: Ban IP after 3 failed login attempts.
 bantime = 600: Ban duration (10 minutes).
 findtime = 600: Time window for counting failed attempts.
-![files content](screenshots3/2.jpg)
+![files content](screenshots3/3.jpg)
 
 ---
 ## Step 4: Restart Fail2Ban
