@@ -75,6 +75,8 @@ Check that the SSH jail is working and monitoring login attempts:
 ```bash
 sudo fail2ban-client status sshd
 ```
+![files content](screenshots3/4.jpg)
+
 ---
 ## Step 6: Re-run the SSH Attack from the Attacker (Kali)
 On the Kali attacker machine, simulate brute-force login attempts (as done in Task 1.1):
