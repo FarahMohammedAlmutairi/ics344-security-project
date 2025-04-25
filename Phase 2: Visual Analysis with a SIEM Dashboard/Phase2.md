@@ -127,7 +127,23 @@ index=main sourcetype="auth_log" "Accepted password"
 
 ### Attacker part:
 ### Step 3: Uploading Log File
+1. In Splunk's webpage, click on `Add data`
+2. Click on `Upload` to upload a file from the **local machine**
+3. In the **Select Source** step, click on `Select File` and choose the log file `attacker.log`
+4. In the **Set Source Type** step, leave the source type as **default**
+5. In the **Input settings** step, configure the **Host** as **Constant value** and **Index** as **Default**
+6. In the **Review** step, there is a summary for the configuration
 
+ Screenshots:
+
+1. ![files content](screenshots/3_12.jpeg)
+2. ![files content](screenshots/3_13.jpeg)
+3. ![files content](screenshots/3_14.jpeg)
+4. ![files content](screenshots/3_15.jpeg)
+5. ![files content](screenshots/3_16.jpeg)
+6. ![files content](screenshots/3_17.jpeg)
+
+### Step 4: Queries & Dashboard
 
 ---
 
