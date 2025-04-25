@@ -32,26 +32,37 @@ Login with:
 - Username: `admin`
 - Password: *(Was set during first boot)*
 
-![Splunk Admin Interface](screenshots/mainPage.jpeg)
+![files content](screenshots/mainPage.jpeg)
 
 ---
 
 ##  Part 2: Extract Log Files (Victim & Attacker)
 
-### Step 1: Install Splunk Universal Forwarder
+### Victim's Log File:
+### Step 1: Read and Copy Log File
+
+Read the log file `auth.log` on the **victim machine** (Metasploitable3), and copy it to directory `/home/vagrant/`
 ```bash
-wget -O splunkforwarder-9.4.1.deb https://download.splunk.com/products/universalforwarder/releases/9.4.1/linux/splunkforwarder-9.4.1-e3bdab203ac8-linux-arm64.deb
-sudo dpkg -i splunkforwarder-9.4.1.deb
-sudo apt --fix-broken install
-sudo /opt/splunkforwarder/bin/splunk start --accept-license
+sudo cat /var/log/auth.log
+sudo cp /var/log/auth.log /home/vagrant/
 ```
 
-### Step 2 Configure the Forwarder
+The ownership of the file was changed so **Kali Linux** could copy it successfully
 ```bash
-sudo /opt/splunkforwarder/bin/splunk add forward-server <splunk-server-ip>:9997
-sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log
-sudo /opt/splunkforwarder/bin/splunk enable boot-start
+sudo chown vagrant:vagrant /home/vagrant/auth.log
 ```
+
+![files content](screenshots/2_1_1.jpeg)
+![files content](screenshots/2_1_2.jpeg)
+
+### Step 2: Transfer Log File
+Copy the log file `auth.log` on **Kali Linux**, and send it to **local machine** through email
+
+```bash
+scp vagrant@192.168.64.3:/home/vagrant/auth.log ~/Desktop/
+```
+
+![files content](screenshots/2_2.jpeg)
 
 ---
 
