@@ -64,26 +64,44 @@ scp vagrant@192.168.64.3:/home/vagrant/auth.log ~/Desktop/
 
 ![files content](screenshots/2_2.jpeg)
 
+### Attacker's Log File:
+### Step 3: Copy and Transfer Log File
+
+Copy `valid_credentials` to log file `attacker.log`, and send it to **local machine** through email
+
+```bash
+cp ~/valid_credintials.txt ~/Desktop/attacker.log
+```
+
+![files content](screenshots/2_3.jpeg)
+
 ---
 
 ##  Part 3: Log Upload and Visualization in Splunk
 
-### Step 1: Uploading `auth.log` (Manual if no forwarder)
-```bash
-scp user@victim:/var/log/auth.log ~/Desktop/
-```
-
-#### Splunk Upload Walkthrough:
-- **Upload File**: `auth.log`
-- **Set Source Type**: `auth_log`
-- **Define Host & Index**
-- **Confirm Upload**
+### Victim part:
+### Step 1: Uploading Log File
+1. In Splunk's webpage, click on `Add data`
+2. Click on `Upload` to upload a file from the **local machine**
+3. In the **Select Source** step, click on `Select File` and choose the log file `auth.log`
+4. In the **Set Source Type** step, leave the source type as **default**
+5. Cont. in the **Set Source Type** step, name and add description for the source type
+6. In the **Input settings** step, configure the **Host** as **Constant value** and **Index** as **Default**
+7. In the **Review** step, there is a summary for the configuration
+8. In the **Done** step, click on `Start Searching` to start analyzing data
 
  Screenshots:
 
-- ![File Upload](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/select-source.png)
-- ![Review Step](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/upload-review.png)
-- ![Success Message](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/upload-successful.png)
+1. ![files content](screenshots/3_1.jpeg)
+2. ![files content](screenshots/3_2.jpeg)
+3. ![files content](screenshots/3_3.jpeg)
+4. ![files content](screenshots/3_4.jpeg)
+5. ![files content](screenshots/3_5.jpeg)
+6. ![files content](screenshots/3_6.jpeg)
+7. ![files content](screenshots/3_7.jpeg)
+8. ![files content](screenshots/3_8.jpeg)
+
+### Step 2: Queries & Dashboard
 
 ---
 
