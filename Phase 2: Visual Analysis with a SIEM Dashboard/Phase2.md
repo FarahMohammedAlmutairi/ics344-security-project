@@ -102,6 +102,32 @@ cp ~/valid_credintials.txt ~/Desktop/attacker.log
 8. ![files content](screenshots/3_8.jpeg)
 
 ### Step 2: Queries & Dashboard
+#### Failed SSH Login Attempts (Hourly)
+```bash
+index=main sourcetype="auth_log" "Failed password"
+| timechart span=1h count
+```
+![files content](screenshots/3_9.png)
+
+#### Accepted SSH Login Attempts (Hourly)
+```bash
+index=main sourcetype="auth_log" "Accepted password"
+| timechart span=1h count
+```
+![files content](screenshots/3_10.png)
+
+#### Top IPs with Successful Logins
+```bash
+index=main sourcetype="auth_log" "Accepted password"
+| rex 'from (?<ip>\d+\.\d+\.\d+\.\d+)'
+| stats count by ip
+| sort - count
+```
+![files content](screenshots/3_11.png)
+
+### Attacker part:
+### Step 3: Uploading Log File
+
 
 ---
 
