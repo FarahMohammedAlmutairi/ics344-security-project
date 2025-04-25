@@ -1,5 +1,5 @@
 
-# Phase 2: Visual Analysis with Splunk SIEM (Server & Forwarder)
+# Phase 2: Visual Analysis with Splunk SIEM
 
 ##  Objective
 Use **Splunk** as a SIEM platform to collect, forward, and visualize security logs from a victim machine (Metasploitable3) or honeypot system.
@@ -10,8 +10,9 @@ Use **Splunk** as a SIEM platform to collect, forward, and visualize security lo
 
 | Machine         | Role            | IP Address       |
 |----------------|------------------|------------------|
-| Kali Linux     | SIEM + Attacker  | 192.168.64.2     |
+| Kali Linux     | Attacker         | 192.168.64.2     |
 | Metasploitable3| Victim           | 192.168.64.3     |
+| Local Machine  | SIEM             | 192.168.129.1    |
 
 ---
 
@@ -26,18 +27,18 @@ sudo /opt/splunk/bin/splunk start --accept-license
 ```
 
 ### Step 2: Access Splunk Interface
-Navigate to `http://<your-ip>:8000`  
+Navigate to `http://127.0.0.1:8000`  
 Login with:
 - Username: `admin`
-- Password: *(Set during first boot)*
+- Password: *(Was set during first boot)*
 
-![Splunk Admin Interface](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/splunk-admin-dashboard.png)
+![Splunk Admin Interface](screenshots/mainPage.jpeg)
 
 ---
 
-##  Part 2: Splunk Forwarder Installation (Run on Victim)
+##  Part 2: Extract Log Files (Victim & Attacker)
 
-### Step 3: Install Splunk Universal Forwarder
+### Step 1: Install Splunk Universal Forwarder
 ```bash
 wget -O splunkforwarder-9.4.1.deb https://download.splunk.com/products/universalforwarder/releases/9.4.1/linux/splunkforwarder-9.4.1-e3bdab203ac8-linux-arm64.deb
 sudo dpkg -i splunkforwarder-9.4.1.deb
@@ -45,7 +46,7 @@ sudo apt --fix-broken install
 sudo /opt/splunkforwarder/bin/splunk start --accept-license
 ```
 
-### Step 4: Configure the Forwarder
+### Step 2 Configure the Forwarder
 ```bash
 sudo /opt/splunkforwarder/bin/splunk add forward-server <splunk-server-ip>:9997
 sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log
