@@ -119,7 +119,7 @@ index=main sourcetype="auth_log" "Accepted password"
 #### Top IPs with Successful Logins
 ```bash
 index=main sourcetype="auth_log" "Accepted password"
-| rex 'from (?<ip>\d+\.\d+\.\d+\.\d+)'
+| rex "from (?<ip>\d+\.\d+\.\d+\.\d+)"
 | stats count by ip
 | sort - count
 ```
@@ -144,48 +144,33 @@ index=main sourcetype="auth_log" "Accepted password"
 6. ![files content](screenshots/3_17.jpeg)
 
 ### Step 4: Queries & Dashboard
+#### Extracted Credentials from Attacker Log
+```bash
+index=main sourcetype="attacker_log"
+| rex "host:\s(?<ip>\d+\.\d+\.\d+\.\d+)\s+login:\s(?<user>\w+)\s+password:\s(?<pass>\w+)"
+| table ip user pass
+```
+![files content](screenshots/3_18.png)
 
----
-
-##  Part 4: Queries & Dashboard
-
-###  Example Queries
-
-#### 1. Failed Password Attempts Over Time
-```spl
-index=main sourcetype="auth_log" "Failed password"
+#### Failed SSH Login Attempts (Hourly)
+```bash
+index=main sourcetype="attacker_log" "Failed password"
 | timechart span=1h count
 ```
+![files content](screenshots/3_19.png)
 
-![Failed Password Chart](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/search-failed-bar-chart-updated.png)
-
----
-
-#### 2. Accepted Passwords by IP
-```spl
-index=main sourcetype="auth_log" "Accepted password"
-| rex "from (?<ip>\d+\.\d+\.\d+\.\d+)"
-| stats count by ip
-| sort -count
+#### Accepted SSH Login Attempts (Hourly)
+```bash
+index=main sourcetype="attacker_log" "Accepted password"
+| timechart span=1h count
 ```
-
-![Accepted Passwords](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/search-accepted-bar-chart.png)
+![files content](screenshots/3_20.png)
 
 ---
 
 ### Save Panel to Dashboard
-![Save Dashboard](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/save-to-dashboard.png)
-
----
-
-##  Troubleshooting & Common Errors
-
-### Log File Not Found
-```bash
-cat /var/log/auth.log
-# No such file or directory
-```
-![Missing Log](https://raw.githubusercontent.com/USERNAME/REPO/main/screenshots/missing-auth-log-kali.png)
+Save panels to the **Dashboard**
+![files content](screenshots/3_21.jpeg)
 
 ---
 
