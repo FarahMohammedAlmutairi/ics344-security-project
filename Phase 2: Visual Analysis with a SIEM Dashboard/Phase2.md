@@ -174,14 +174,27 @@ Save panels to the **Dashboard**
 
 ---
 
-##  What to Monitor in Splunk
+## Data Comparison
 
-| Item                 | Reason                              |
-|----------------------|-------------------------------------|
-| `auth.log`           | Login attempts, brute-force signs   |
-| `syslog`             | System-wide alerts, reboots         |
-| `messages`           | Kernel messages, error reporting    |
-| `secure`             | Authentication-related events       |
+## Victim Analysis
+- **Failed Login Attempts:** ~120
+- **Successful Logins:** 3 (all from IP 192.168.64.2 "Attacker")
+- **Attack Success Rate:** 2.5% (3 successful out of ~120 total attempts)
+- **Peak Attack Period:** 12:00 PM - 1:00 PM 
+
+## Attacker Analysis
+- **Target IP:** 192.168.64.3
+- **Credential Obtained:** vagrant (default credential for the system)
+- **Failed & Successful Attempts Logged:** 0 (attacker initiated the connections, so the attempts are recorded in the victim logs only)
+
+## Key Findings
+- Successful compromise using brute force technique
+- The victim system used default credentials, which were vagrant
+- The victim system lacked both rate limiting and account lockout protection features
+- The attacker's persistence eventually resulted in a successful compromise of the system
+- The difference between attacker and victim IP addresses indicates either network configuration modifications or the involvement of multiple systems
+- The victim logs contain more detailed attack information that the attacker logs
+- The attacker pattern shows signs of automation because it focuses on specific targets rather than random attempts
 
 ---
 
@@ -189,8 +202,8 @@ Save panels to the **Dashboard**
 
 This phase demonstrated:
 - How to install and configure Splunk SIEM
-- Use of a forwarder to collect logs
 - Manual log upload and analysis
-- Creating dashboards to detect intrusions
+- Creating dashboards using queries
+- Analysis and comparison of environment data
 
 
