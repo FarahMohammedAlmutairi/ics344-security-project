@@ -18,3 +18,18 @@ In this phase, logs from the victim and attacker machines are integrated into a 
 The final phase focuses on proposing and implementing a defense mechanism to secure the previously compromised service. The defense is then tested by repeating the original attack to confirm that the vulnerability has been mitigated.
 ## 📁 Repository Structure
 
+## main/
+├── Phase 1: Setup and Compromise
+│   ├── screenshots/
+│   ├── Task 1.1.md
+│   └── Task 1.2.md
+│
+├── Phase 2: Visual Analysis with a SIEM Tool
+│   ├── screenshots/
+│   └── Phase2.md
+│
+├── Phase 3: Defensive Strategy Proposal
+│   ├── screenshots3/
+│   └── Phase3.md
+│
+└── README.md
