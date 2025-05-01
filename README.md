@@ -29,12 +29,12 @@ The final phase focuses on proposing and implementing a defense mechanism to sec
 
 ```text
 main/
-├── Phase 1: Setup and Compromise
+├── Phase 1: Setup and Compromise the Service
 │   ├── screenshots/
 │   ├── Task 1.1.md
 │   └── Task 1.2.md
 │
-├── Phase 2: Visual Analysis with a SIEM Tool
+├── Phase 2: Visual Analysis with a SIEM Dashboard
 │   ├── screenshots/
 │   └── Phase2.md
 │
