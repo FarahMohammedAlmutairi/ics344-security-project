@@ -18,7 +18,8 @@ In this phase, logs from the victim and attacker machines are integrated into a 
 The final phase focuses on proposing and implementing a defense mechanism to secure the previously compromised service. The defense is then tested by repeating the original attack to confirm that the vulnerability has been mitigated.
 ## 📁 Repository Structure
 
-## main/
+```text
+main/
 ├── Phase 1: Setup and Compromise
 │   ├── screenshots/
 │   ├── Task 1.1.md
@@ -33,3 +34,4 @@ The final phase focuses on proposing and implementing a defense mechanism to sec
 │   └── Phase3.md
 │
 └── README.md
+
