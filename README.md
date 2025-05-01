@@ -6,7 +6,16 @@
 |-------------------|----------------|
 | Farah Almutairi   | 202159190      |    
 | Reema Alhweamel   | 202178930      |       
-| Danah Aljameel   | 202153110       |       
+| Danah Aljameel   | 202153110       |      
+
+## 🛠️ Work Distribution
+
+| Name              | Responsibilities                                       |
+|-------------------|--------------------------------------------------------|
+| Farah Almutairi   | Contributed equally to Phases 1, 2, and 3              |
+| Reema Alhweamel   | Contributed equally to Phases 1, 2, and 3              |
+| Danah Aljameel    | Contributed equally to Phases 1, 2, and 3              |
+
 
 ## 📄 Project Phases
 
