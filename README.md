@@ -1,4 +1,4 @@
-# ics344-security-project
+# ics344-security-project-group-02
 
 ## 👥 Team Members
 
